@@ -29,3 +29,55 @@ FROM airport
 JOIN game ON game.location = airport.ident
 WHERE game.screen_name = 'Heini';
 ![Screenshot 2024-10-21 075702](https://github.com/user-attachments/assets/b3506d19-7cf6-4281-801f-779abb04299f)
+
+### Question 5
+SELECT airport.elevation_ft * 0.3048 AS elevation_m
+FROM airport
+JOIN game ON game.location = airport.ident
+WHERE game.screen_name = 'Heini';
+![Screenshot 2024-10-21 080029](https://github.com/user-attachments/assets/fcce0fcd-6606-41e0-94fb-1264012cee81)
+
+### Question 6
+SELECT airport.name
+FROM airport
+JOIN game ON game.location = airport.ident
+WHERE game.screen_name = 'Ilkka';
+![Screenshot 2024-10-21 080322](https://github.com/user-attachments/assets/29638281-eac8-4a9c-9983-9c3a9d6aee94)
+
+### Question 7
+SELECT country.name
+FROM airport
+JOIN game ON game.location = airport.ident
+JOIN country ON airport.iso_country = country.iso_country
+WHERE game.screen_name = 'Ilkka';
+![Screenshot 2024-10-21 080543](https://github.com/user-attachments/assets/85778762-0a37-4597-b432-50f4b3d62e2b)
+
+### Question 8
+SELECT goal.name
+FROM goal
+JOIN goal_reached ON goal.id = goal_reached.goal_id
+JOIN game ON goal_reached.game_id = game.id
+WHERE game.screen_name = 'Heini';
+![Screenshot 2024-10-21 080954](https://github.com/user-attachments/assets/ce27087b-525c-4a7f-a5db-9d1942e29894)
+
+### Question 9
+SELECT airport.name 
+FROM game, goal_reached, goal, airport 
+WHERE ident = location 
+AND game.id = game_id 
+AND goal.id = goal_id 
+AND screen_name = "Ilkka" 
+AND goal.name = "CLOUDS";
+![Screenshot 2024-10-21 082910](https://github.com/user-attachments/assets/6f25fdbe-5506-4b12-b1fb-609fd29e7d8f)
+
+### Question 10
+SELECT country.name 
+FROM game, goal_reached, goal, country, airport 
+WHERE airport.iso_country = country.iso_country 
+AND ident = location 
+AND game.id = game_id 
+AND goal.id = goal_id 
+AND screen_name = "Ilkka" 
+AND goal.name = "CLOUDS";
+![Screenshot 2024-10-21 083437](https://github.com/user-attachments/assets/7a2f0663-2bae-4d44-9df8-da957e537a1c)
+
