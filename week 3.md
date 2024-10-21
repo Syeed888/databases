@@ -50,6 +50,7 @@ FROM airport
 JOIN game ON game.location = airport.ident
 JOIN country ON airport.iso_country = country.iso_country
 WHERE game.screen_name = 'Ilkka';
+
 ![Screenshot 2024-10-21 080543](https://github.com/user-attachments/assets/85778762-0a37-4597-b432-50f4b3d62e2b)
 
 ### Question 8
